@@ -5,7 +5,10 @@ export const platforms = ['All', 'PC', 'PlayStation']
 export const fillButtonClass =
   'group relative overflow-hidden rounded-full border-0 border-transparent outline-none ring-0 bg-[#5f2748] px-5 py-3 text-sm font-medium text-white hover:border-transparent focus:border-transparent focus:outline-none'
 
-export const fillLayerClass =
+export const lightFillLayerClass =
+  'absolute inset-x-0 bottom-0 h-0 bg-[#f4a261] transition-all duration-300 ease-out group-hover:h-full'
+
+export const darkFillLayerClass =
   'absolute inset-x-0 bottom-0 h-0 bg-[#fff3e7] transition-all duration-300 ease-out group-hover:h-full'
 
 export const fillTextClass =
@@ -20,7 +23,11 @@ export const buildSteamSearch = (title) =>
 export const buildSteamReviews = (title) =>
   `https://store.steampowered.com/search/?term=${encodeURIComponent(`${title} reviews`)}`
 
-export const getFranchise = (title) => {
+export const getFranchise = (input) => {
+  if (typeof input === 'object' && input?.franchise?.trim()) return input.franchise.trim()
+
+  const title = typeof input === 'string' ? input : input?.title || ''
+
   if (title.startsWith('Resident Evil')) return 'Resident Evil'
   if (title.startsWith('Silent Hill')) return 'Silent Hill'
   if (title.startsWith('Dark Souls')) return 'Dark Souls'

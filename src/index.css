@@ -3,3 +3,15 @@
 #right-content::-webkit-scrollbar {
   display: none;
 }
+@font-face {
+  font-family: 'Gilroy';
+  src: url('C:\\WED DEVELOPMENT\\react\\07-ui-project1\\fonts\\Gilroy-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+html {
+  scroll-behavior: smooth;
+}
+button {
+  cursor: pointer;
+}
